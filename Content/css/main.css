@@ -1,0 +1,232 @@
+﻿/* DEFAULTS
+------------------------------------------------------------*/
+
+/* body */
+html{height: 100%;}
+body {font: 13px/1.231 arial,helvetica,clean,sans-serif; margin: 0; padding:0; font-size:100%; }
+
+/* form */
+input, button, textarea, select, optgroup, option {font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit;}
+input[type="text"] {width: 200px; border: 1px solid #CCC;}
+input[type="password"] {width: 200px;border: 1px solid #CCC;}
+fieldset, .fieldset {margin: 0px 0 20px 0; padding: 10px 30px; border: 1px solid #CCC;}
+.fieldset{ margin-top:10px;}
+fieldset p {margin: 2px 10px 10px 0px;}
+fieldset label, label {display: block;}
+fieldset label.inline {display: inline;}
+legend {font-size: 1.1em; font-weight: 600; text-align:left; padding: 2px 4px 8px 4px;}
+input, button, textarea, select {*font-size: 100%;} /* purpose To enable resizing for IE @branch For IE6-Win, IE7-Win */
+textarea{ width:100%; height:100px;}
+
+/* table */
+table.data_table{table-layout:fixed; border-collapse: collapse; border-spacing: 0; border-right: 1px solid #DFDFDF; border-left: 1px solid #DFDFDF; border-top: 1px solid #DFDFDF;}
+table.data_table td, table.data_table th{padding:5px 10px; font-size:11px; }
+table.data_table th{ background-color:#DBE1E6; color:#333; 
+                     background:url("http://s0.wp.com/wp-admin/images/gray-grad.png") repeat-x scroll left top #DFDFDF;
+color:#333333;}
+table.data_table th.header{ color:#fff; }
+table.data_table td{ background-color:#f5f5f5; border-bottom: 1px solid #DFDFDF; }
+table.data_table tr.alt td{ background-color:#fff;}
+table.data_table tr td.table_toolbar{ background-color:#6688a4;}
+
+/* text */
+h1, h2, h3, h4, h5, h6 {font-size: 100%;font-weight: normal;}
+h1, h2, h3, h4, li, ul, p {text-align:left; font-size:100%; margin:0; padding:0; color:#333;}
+h1, h2, h3, h4, h3 a {font-size: 110%; font-weight: bold;}
+p, table{font-size:100%; line-height:160%;}
+h1 span{ color:#ccc;}
+
+/*lists*/
+ul, li{ list-style-type: none; margin:0; padding:0; text-align:left;}
+dl {text-align:left;}
+dl dt {text-align:left; margin-left:10px;}
+dl dt dd {text-align:left; margin-left:10px;}
+
+a {color:#105CB6;}
+a:hover {text-decoration:none;}
+
+/* other */
+img {border: none;}
+hr {height:1px; color:#F2F1E8; background: #F2F1E8; border:none;}
+#container .hr p{ margin-bottom:0;}
+caption,
+th {text-align: left;}
+
+/* REUSABLES
+------------------------------------------------------------*/
+
+/* BUTTON
+http://www.bloggerswatch.com/internet/css-trick-submit-button-should-look-same-everywhere/ */
+.button, input.button, input.button{
+	display: inline-block;
+	padding: 0 9px;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 24px;
+	text-decoration: none;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	box-shadow: 0 1px 2px #ddd;
+	-moz-box-shadow: 0 1px 2px #ddd;
+	-webkit-box-shadow: 0 1px 2px #ddd;
+	text-shadow: none;
+	text-align: center;
+	cursor: pointer;
+	-webkit-background-clip: padding-box;
+	color: #666;
+	background: url(../images/btn_secondary.gif) top;
+	border: 1px solid #bdbdbd;
+	text-decoration: none !important;
+	float:left;
+}
+
+.button img{ display:none;}
+
+a:hover.button{
+	color: #000;
+	border-color: #a8a8a8;
+	text-decoration: none;
+	background-position: 0 25px;
+}
+
+input.button, .box button.button, button.button, input.button, .box input.button{padding:4px;}
+input.button, button.button{*padding:0px; *line-height: 21px;} /*IE hack, TODO: other than IE7??*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {input.button, button.button{padding:0px 8px; position:relative; top:-2px;} }  /*web kit*/ 
+
+/*message rounded box*/
+.message_wrapper{text-align:center; height:0px;}
+.message_wrapper span { padding:5px 10px; background-color:#FFFFE0; border: 1px solid #E6DB55;}
+
+/*paging*/
+.paging{margin:10px 10px 0px 0px;}
+.paging a, .paging span, .paging_top a, .paging_top span{display:block; border:1px solid #888; float:left; padding:5px; height:15px; width:15px; margin:1px; text-decoration:none; color:#888; font-size:11px;}
+.paging a {cursor:pointer;}
+.paging a.p{width:80px;}
+.paging a.n{width:60px;}
+.paging span{background-color:#888; color:#fff; font-weight:bold; border:1px solid #888; }
+.paging span.pg_dots{background-color:#fff; color:#888; font-weight:bold; border:1px solid #fff; }
+.paging a:hover, .paging_top a:hover{border:1px solid #222; background-color:#80A71F; color:#fff;}
+
+/*table paging*/
+.top_paging_wrp{}
+.top_paging a:hover{border:1px solid #999;}
+.top_paging {margin-bottom:2px; margin-top:2px;}
+.top_paging .previous span, .top_paging .next span{display:block; height:17px; cursor:pointer;}
+.top_paging .previous, .top_paging .next{ display:block; margin-left:5px; float: left; height:17px; width:27px; border:1px solid #ccc;}
+.top_paging .previous span{font-weight: bold; background: url(../images/icons/arrow_left.gif) no-repeat 50% 70%;}
+.top_paging .next span{ font-weight: bold; background: url(../images/icons/arrow_right.gif) no-repeat 50% 70%;}
+.top_paging select{ padding:0; margin-right: 10px; margin-left: 10px;}
+.top_paging .previous, .top_paging .next{ -moz-background-clip:border; -moz-background-inline-policy:continuous; -moz-background-origin:padding; background:transparent url(http://d.yimg.com/a/i/ww/met/th/slate/gsprite_pg_slate_062209.gif) repeat-x scroll 0 0; border:1px solid #DBE1E6;}
+.top_paging_status_text{line-height:16px; font-size:11px;}
+.top_paging_per_page_wrp{ margin-right:20px;}
+.top_paging_per_page_wrp select{ font-size:11px;}
+
+
+/* UTILITY
+------------------------------------------------------------*/
+/*clearfix*/
+.clearfix:after {content: ".";  display: block;  clear: both;  visibility: hidden;  line-height: 0;  height: 0;}  
+.clearfix {display: inline-block;}  
+html[xmlns] .clearfix {display: block;}  
+* html .clearfix {height: 1%;}
+
+/*layout*/
+.clr {clear: both; height: 1px; overflow: hidden; visibility:hidden; display: block;}
+.right{float:right}
+.left{float:left}
+.fl_none{float:none;}
+.cl{clear: both;}
+.hr{ padding-bottom:10px; margin-bottom:10px; border-bottom:1px solid #ccc;}
+
+/*text*/
+.red{color:Red}
+.white{ color:#fff}
+.green{color:#80A71F}
+.small{font-size:11px;}
+.alpha{filter:alpha(opacity=35); -moz-opacity:0.35; opacity: 0.35;}
+.alpha9{filter:alpha(opacity=90); -moz-opacity:0.90; opacity: 0.90;}
+.italic{font-style:italic;}
+.light_grety{color:#F2F1E8 }
+input.grayout{background-color: #eee; background-image:none; border:none;}
+
+/*grid*/
+.margin {margin:10px;}
+.padding_20{margin:20px;}
+.padding_left{padding-left:10px;}
+.padding_right{padding-right:10px;}
+.margin_top {margin-top:10px;}
+.margin_left{margin-left:10px;}
+.margin_bottom{margin-bottom:10px;}
+.margin_bottom_5{margin-bottom:5px;}
+.margin_right{ margin-right:10px;}
+.margin_right2{ margin-right:20px;}
+.padding{ padding:10px;}
+.padding_top{padding-top:10px;}
+.background_none{background:none;}
+.width_half{width:50%;}
+.width_full{width:100%;}
+
+/*other*/
+.hide{display:none;}
+
+/*list*/
+ul.list{padding-left:15px;}
+ul.list li{list-style-type:disc;}
+
+/* LAYOUT
+------------------------------------------------------------*/
+body{text-align:center; background-color:#e8e8e8;  background-color: #B9090B;}
+#container, #header_inner, #footer_inner, #sub_header_inner{margin:0 auto; width:960px;}
+
+/*header*/
+#header{padding:10px 20px 0px 20px; background-color:#333; border-bottom: 3px solid #666666;}
+#header .logo span{ display:block; width:160px; height:33px;}
+
+/*nav*/
+#nav{}
+#nav li{display:inline;}
+#nav li a{float:left; font-weight:bold; font-size:14px; display:block; padding:5px 10px; border-top:1px solid #666; border-left:1px solid #666; border-right:1px solid #666; position:relative; top:0px;  /**/ color:#eee; margin-right:10px; text-decoration:none; 
+          margin-top:15px;}
+#nav li a.selected{background-color:#E8E8E8; color:#333; border-top:1px solid #E8E8E8; border-left:1px solid #E8E8E8; border-right:1px solid #E8E8E8;}
+
+/*footer*/
+#footer{ margin-top:10px; padding:10px 20px;}
+#footer p, #footer p a{color:#fff; margin:0; font-size:12px; text-align:left;}
+
+/*main*/
+#container{margin:20px auto; width:960px;}
+
+.left_col {margin-right:270px; }
+.right_col {width:250px; float:right;}
+.right_col_inner{}
+
+.panel_box{ padding:10px; border:1px solid #CCCCCC; -moz-border-radius:3px 3px 3px 3px; margin-bottom:20px;}
+
+/* box */
+.box{padding:30px; border:1px solid #d1d1d1; text-align:left; }
+#container .box{
+background-color:#fff; 
+border: 1px solid #ccc;
+padding-top:0px; 
+-moz-border-radius:3px;
+-moz-box-shadow:0 5px 20px #333;
+padding:20px; 
+border:none; }
+
+.right_bar{ width:250px; float:right;}
+.main_box{ margin-right:270px; }
+
+/* FONTS
+------------------------------------------------------------*/
+h1, #sub_header h1{margin-bottom:0;  color:#333; font-family:Helvetica Neue,Helvetica,Arial,sans-serif;
+font-size:28px;}
+#container h2, #sub_header h2{margin-bottom:0.7em; font-size:17px; color:#777}
+#container h3, #sub_header h3{margin-bottom:0.3em; font-size:13px;}
+#container h4{margin-bottom:0.3em;}
+#container p, #sub_header p{font-size:12px;}
+#container li, #sub_header li{ font-size:12px;}
+
+/* round */
+#nav li a, ul.nav_tabs li a.current
+{-moz-border-radius-topleft:3px; -webkit-border-top-left-radius:3px;-webkit-border-top-right-radius: 3px;-moz-border-radius-topright:3px;}
