@@ -1,4 +1,4 @@
-﻿/*!
+/*!
 * jQuery JavaScript MVC routing plugin
 * http://www.davidpirek.com/javascript-mvc-jquery-plugin-framework
 *
@@ -64,12 +64,12 @@
 
   var parsePlaceHolders = function (path) {
 
-    path = removeFristDash(path);
+    //path = removeFristDash(path);
 
-    // Remove '/' as first char.
-    if (path.charAt(0) === '/') {
-      path = path.substr(1);
-    }
+    //    // Remove '/' as first char.
+    //    if (path.charAt(0) === '/') {
+    //      path = path.substr(1);
+    //    }
 
     var ar = path.split('/'),
         re = [];
@@ -79,7 +79,7 @@
 
       var x = d.match(/[{}]/g);
 
-      if (x == null) {
+      if (x === null) {
         re[i] = false;
       } else {
         re[i] = true;
@@ -152,7 +152,6 @@
     // Loop table.
     $.each(table, function (i, d) {
 
-
       var items = hash.split('/');
 
       // Add start '/' if not presnet
@@ -176,11 +175,11 @@
             matchCount++;
           }
 
-          if (d === true) {
-
+          if (d) {
             //build action object
             actionObject[tableItems[i].replace(/[{}]/g, '')] = items[i];
           }
+
         });
       }
 
@@ -189,7 +188,7 @@
 
         // Merge with defaults, if there are some params missing.
         $.each(actionObject, function (i, d) {
-          if (typeof d == "undefined") {
+          if (typeof d === "undefined" || d === "") {
             actionObject[i] = params[i];
           }
         });
@@ -231,7 +230,6 @@
     });
   };
 
-
   // MVC plugin function.
   $.fn.MVC = function (op) {
 
@@ -264,7 +262,7 @@
         defaults.start();
 
         var actionObject = rounte(routingTable, hash);
-
+        console.log(routingTable); console.log(actionObject);
         // Run.
         var run = function (controller, action, params) {
 
@@ -337,24 +335,24 @@
               {
                 id: "view",
                 type: "Get",
-                url: defaults.rootPath + defaults.viewsPath + controller + "/" + action + ".html" + getRandomParam(),
+                url: defaults.rootPath + defaults.viewsPath + controller + "/" + action + ".html", // + getRandomParam(),
                 dataType: "html"
               },
               {
                 id: "controller",
                 type: "Get",
-                url: defaults.rootPath + defaults.controllersPath + controller + ".js" + getRandomParam(),
+                url: defaults.rootPath + defaults.controllersPath + controller + ".js", // + getRandomParam(),
                 dataType: "script"
               }],
-              // Sucess.
+            // Sucess.
               function (d) {
                 exec(true, d.view, eval('(' + d.controller + ')'));
               },
-              // Error.
+            // Error.
               function (d) {
                 exec(false);
                 defaults.error("controller did not load");
-            });
+              });
           }
         };
 
